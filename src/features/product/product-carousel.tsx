@@ -40,7 +40,7 @@ const useStyles = createStyles(() => ({
     alignItems: "center",
     position: "absolute",
     bottom: 5,
-    right: 5,
+    left: "35%",
     padding: "8px 18px",
     background: "rgba(0,0,0, 0.8)",
     color: " #fff",
