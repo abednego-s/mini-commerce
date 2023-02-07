@@ -12,7 +12,7 @@ import {
 import { IconShoppingCart } from "@tabler/icons-react";
 import { showNotification } from "@mantine/notifications";
 import { Product } from "./product-types";
-import { ProductCarousel } from "../../components/carousels";
+import { ProductCarousel } from "./product-carousel";
 
 export function ProductCard({ images, rating, name, price }: Product) {
   return (

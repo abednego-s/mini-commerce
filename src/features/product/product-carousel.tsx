@@ -95,7 +95,11 @@ export function ProductCarousel({ slides }: { slides: string[] }) {
 
         <div className={classes.carouselIndicator}>
           <div>
-            <ActionIcon onClick={goToPrevSlide} color="orange.6">
+            <ActionIcon
+              onClick={goToPrevSlide}
+              color="orange.6"
+              data-testid="carousel-prev"
+            >
               <IconCaretLeft size={25} />{" "}
             </ActionIcon>
           </div>
@@ -103,7 +107,11 @@ export function ProductCarousel({ slides }: { slides: string[] }) {
             {slideIndex + 1} / {slides.length}
           </div>
           <div>
-            <ActionIcon onClick={goToNextSlide} color="orange.6">
+            <ActionIcon
+              onClick={goToNextSlide}
+              color="orange.6"
+              data-testid="carousel-next"
+            >
               <IconCaretRight size={25} />{" "}
             </ActionIcon>
           </div>
