@@ -1,4 +1,5 @@
 import { Container, Group, Header as MantineHeader, Text } from "@mantine/core";
+import { CartPopover } from "../../features/cart";
 
 export function Header() {
   return (
@@ -8,6 +9,7 @@ export function Header() {
           <Text fw="600" fz="lg">
             Mini Commerce App
           </Text>
+          <CartPopover />
         </Group>
       </Container>
     </MantineHeader>

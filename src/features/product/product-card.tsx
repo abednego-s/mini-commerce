@@ -9,12 +9,19 @@ import {
   Rating,
   Space,
 } from "@mantine/core";
-import { IconShoppingCart } from "@tabler/icons-react";
 import { showNotification } from "@mantine/notifications";
 import { Product } from "./product-types";
 import { ProductCarousel } from "./product-carousel";
+import { AddToCartButton } from "../cart";
 
-export function ProductCard({ images, rating, name, price }: Product) {
+export function ProductCard({
+  id,
+  image,
+  images,
+  rating,
+  name,
+  price,
+}: Product) {
   return (
     <Grid gutter="md">
       <Col lg={6} md={12}>
@@ -42,19 +49,7 @@ export function ProductCard({ images, rating, name, price }: Product) {
           </Text>
           <Space h="lg" />
           <Group>
-            <Button
-              color="yellow.6"
-              leftIcon={<IconShoppingCart size={16} />}
-              onClick={() =>
-                showNotification({
-                  title: "Add to Cart",
-                  message: `${name} succesfully added to cart`,
-                  autoClose: 2000,
-                })
-              }
-            >
-              Add Cart
-            </Button>
+            <AddToCartButton id={id} name={name} image={image} total={1} />
             <Button
               color="green.6"
               onClick={() =>

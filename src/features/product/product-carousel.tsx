@@ -39,12 +39,13 @@ const useStyles = createStyles(() => ({
     justifyContent: "space-between",
     alignItems: "center",
     position: "absolute",
-    bottom: 0,
-    right: 0,
-    padding: "10px 25px",
-    background: "rgba(0,0,0, 0.6)",
+    bottom: 5,
+    right: 5,
+    padding: "8px 18px",
+    background: "rgba(0,0,0, 0.8)",
     color: " #fff",
     width: "150px",
+    borderRadius: "10px",
   },
 }));
 
@@ -95,24 +96,16 @@ export function ProductCarousel({ slides }: { slides: string[] }) {
 
         <div className={classes.carouselIndicator}>
           <div>
-            <ActionIcon
-              onClick={goToPrevSlide}
-              color="orange.6"
-              data-testid="carousel-prev"
-            >
-              <IconCaretLeft size={25} />{" "}
+            <ActionIcon onClick={goToPrevSlide} color="orange.6">
+              <IconCaretLeft size={35} />{" "}
             </ActionIcon>
           </div>
           <div>
             {slideIndex + 1} / {slides.length}
           </div>
           <div>
-            <ActionIcon
-              onClick={goToNextSlide}
-              color="orange.6"
-              data-testid="carousel-next"
-            >
-              <IconCaretRight size={25} />{" "}
+            <ActionIcon onClick={goToNextSlide} color="orange.6">
+              <IconCaretRight size={35} />{" "}
             </ActionIcon>
           </div>
         </div>
