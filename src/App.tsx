@@ -3,7 +3,7 @@ import { NotificationsProvider } from "@mantine/notifications";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "./app/store";
 import { MainLayout } from "./components/layouts";
 import { Products } from "./features/product";
 

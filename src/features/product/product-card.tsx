@@ -48,7 +48,6 @@ export function ProductCard({
           <Text fz="lg" fw="600">
             {price}
           </Text>
-          {/* <Space  /> */}
           <Divider my={35} size="xs" />
           <Group>
             <AddToCartButton productId={id} />
