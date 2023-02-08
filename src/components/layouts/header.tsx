@@ -3,7 +3,7 @@ import { CartPopover } from "../../features/cart";
 
 export function Header() {
   return (
-    <MantineHeader height={60} sx={() => ({ position: "fixed" })}>
+    <MantineHeader height={80} sx={() => ({ position: "fixed" })}>
       <Container sx={() => ({ height: "100%" })}>
         <Group position="apart" align="center" h="100%">
           <Text fw="600" fz="lg">

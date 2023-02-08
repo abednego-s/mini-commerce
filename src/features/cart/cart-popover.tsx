@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import {
   ActionIcon,
   Badge,
@@ -13,25 +12,24 @@ import { useCart } from "./use-cart";
 
 export function CartPopover() {
   const { cart, removeFromCart, getTotal } = useCart();
-  const total = useMemo(() => getTotal(), [getTotal]);
 
   return (
     <Popover width={300} position="bottom" withArrow shadow="md">
       <Popover.Target>
-        <ActionIcon>
+        <ActionIcon size={50}>
           <Badge
             color="red"
             variant="filled"
             sx={() => ({
               position: "absolute",
               borderRadius: "50%",
-              height: "30px",
-              width: "30px",
+              height: "40px",
+              width: "40px",
               top: -15,
               right: -15,
             })}
           >
-            {total}
+            {getTotal()}
           </Badge>
           <IconShoppingCart size={30} />
         </ActionIcon>
