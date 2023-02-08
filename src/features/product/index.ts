@@ -4,4 +4,4 @@ export * from "./product-skeleton";
 export * from "./product-types";
 export * from "./products-card";
 export * from "./products-skeleton";
-export * from "./products";
+export * from "./products-page";

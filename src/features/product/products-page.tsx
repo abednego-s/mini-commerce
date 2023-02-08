@@ -4,7 +4,7 @@ import { ProductsSkeleton } from "./products-skeleton";
 import { ErrorAlert } from "../../components/errors";
 import { useGetProducts } from "./product-queries";
 
-export function Products() {
+export function ProductsPage() {
   const { isLoading, isError, isSuccess } = useGetProducts();
 
   return (

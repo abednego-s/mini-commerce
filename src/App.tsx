@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import { MainLayout } from "./components/layouts";
-import { Products } from "./features/product";
+import { ProductsPage } from "./features/product";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +16,7 @@ function App() {
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <NotificationsProvider>
             <MainLayout>
-              <Products />
+              <ProductsPage />
             </MainLayout>
           </NotificationsProvider>
         </MantineProvider>
