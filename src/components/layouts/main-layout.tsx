@@ -7,7 +7,7 @@ export function MainLayout({ children }: { children: JSX.Element }) {
     <>
       <Header />
       <main>
-        <Space h={80} />
+        <Space h={100} />
         {children}
         <Space h={80} />
       </main>

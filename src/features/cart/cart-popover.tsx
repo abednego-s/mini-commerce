@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   ActionIcon,
   Badge,
@@ -8,25 +9,11 @@ import {
   Text,
 } from "@mantine/core";
 import { IconShoppingCart, IconTrash } from "@tabler/icons-react";
-import { useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../features/cart/cart-slice";
-import { RootState } from "../../store";
+import { useCart } from "./use-cart";
 
 export function CartPopover() {
-  const cart = useSelector((state: RootState) => state.cart);
-  const dispatch = useDispatch();
-
-  const total = useMemo(() => {
-    return cart.reduce((prev, current) => {
-      prev += current.total;
-      return prev;
-    }, 0);
-  }, [cart]);
-
-  function onRemoveCartItem(id: string) {
-    dispatch(removeFromCart(id));
-  }
+  const { cart, removeFromCart, getTotal } = useCart();
+  const total = useMemo(() => getTotal(), [getTotal]);
 
   return (
     <Popover width={300} position="bottom" withArrow shadow="md">
@@ -58,7 +45,7 @@ export function CartPopover() {
                 <Text fz="sm">
                   ({item.total}) {item.name}
                 </Text>
-                <ActionIcon onClick={() => onRemoveCartItem(item.id)}>
+                <ActionIcon onClick={() => removeFromCart(item.id)}>
                   <IconTrash size={20} />
                 </ActionIcon>
               </Group>

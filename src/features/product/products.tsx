@@ -1,25 +1,17 @@
-import { Container, Space } from "@mantine/core";
-import { Product } from "./product-types";
+import { Container } from "@mantine/core";
 import { ProductsCard } from "./products-card";
 import { ProductsSkeleton } from "./products-skeleton";
-import { useFetch } from "../../hooks";
 import { ErrorState } from "../../components/app-states";
-
-const url = process.env.REACT_APP_API_URL;
+import { useGetProducts } from "./product-queries";
 
 export function Products() {
-  const { data: products, error } = useFetch<Product[]>(url);
+  const { isLoading, isError, isSuccess } = useGetProducts();
 
   return (
     <Container>
-      <Space h="lg" />
-      {error ? (
-        <ErrorState />
-      ) : products ? (
-        <ProductsCard products={products} />
-      ) : (
-        <ProductsSkeleton />
-      )}
+      {isLoading ? <ProductsSkeleton /> : null}
+      {isError ? <ErrorState /> : null}
+      {isSuccess ? <ProductsCard /> : null}
     </Container>
   );
 }

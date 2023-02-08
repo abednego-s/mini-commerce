@@ -8,6 +8,7 @@ import {
   Text,
   Rating,
   Space,
+  Divider,
 } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import { Product } from "./product-types";
@@ -16,9 +17,9 @@ import { AddToCartButton } from "../cart";
 
 export function ProductCard({
   id,
-  image,
   images,
   rating,
+  reviewCount,
   name,
   price,
 }: Product) {
@@ -40,16 +41,17 @@ export function ProductCard({
           <Flex align="center">
             <Rating value={rating} readOnly />
             <Text color="dimmed" ml="sm" fz="sm">
-              ({rating} reviews)
+              ({reviewCount} reviews)
             </Text>
           </Flex>
           <Space h="md" />
           <Text fz="lg" fw="600">
             {price}
           </Text>
-          <Space h="lg" />
+          {/* <Space  /> */}
+          <Divider my={35} size="xs" />
           <Group>
-            <AddToCartButton id={id} name={name} image={image} total={1} />
+            <AddToCartButton productId={id} />
             <Button
               color="green.6"
               onClick={() =>

@@ -1,8 +1,10 @@
 import { Card, Stack } from "@mantine/core";
 import { ProductCard } from "./product-card";
-import { Product } from "./product-types";
+import { useGetProducts } from "./product-queries";
 
-export function ProductsCard({ products }: { products?: Product[] }) {
+export function ProductsCard() {
+  const { data: products } = useGetProducts();
+
   return (
     <Stack spacing="lg">
       {products?.map((product) => (

@@ -6,6 +6,7 @@ import {
   Group,
   Image,
   Stack,
+  Text,
 } from "@mantine/core";
 import {
   IconCaretLeft,
@@ -40,11 +41,11 @@ const useStyles = createStyles(() => ({
     alignItems: "center",
     position: "absolute",
     bottom: 5,
-    left: "35%",
-    padding: "8px 18px",
+    right: 5,
+    padding: "5px 10px",
     background: "rgba(0,0,0, 0.8)",
     color: " #fff",
-    width: "150px",
+    width: "120px",
     borderRadius: "10px",
   },
 }));
@@ -95,19 +96,15 @@ export function ProductCarousel({ slides }: { slides: string[] }) {
         ))}
 
         <div className={classes.carouselIndicator}>
-          <div>
-            <ActionIcon onClick={goToPrevSlide} color="orange.6">
-              <IconCaretLeft size={35} />{" "}
-            </ActionIcon>
-          </div>
-          <div>
+          <ActionIcon onClick={goToPrevSlide} color="orange.6">
+            <IconCaretLeft size={35} />{" "}
+          </ActionIcon>
+          <Text fz="xs">
             {slideIndex + 1} / {slides.length}
-          </div>
-          <div>
-            <ActionIcon onClick={goToNextSlide} color="orange.6">
-              <IconCaretRight size={35} />{" "}
-            </ActionIcon>
-          </div>
+          </Text>
+          <ActionIcon onClick={goToNextSlide} color="orange.6">
+            <IconCaretRight size={35} />{" "}
+          </ActionIcon>
         </div>
       </div>
       <Group position="center">
