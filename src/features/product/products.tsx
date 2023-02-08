@@ -1,7 +1,7 @@
 import { Container } from "@mantine/core";
 import { ProductsCard } from "./products-card";
 import { ProductsSkeleton } from "./products-skeleton";
-import { ErrorState } from "../../components/app-states";
+import { ErrorAlert } from "../../components/errors";
 import { useGetProducts } from "./product-queries";
 
 export function Products() {
@@ -10,7 +10,7 @@ export function Products() {
   return (
     <Container>
       {isLoading ? <ProductsSkeleton /> : null}
-      {isError ? <ErrorState /> : null}
+      {isError ? <ErrorAlert /> : null}
       {isSuccess ? <ProductsCard /> : null}
     </Container>
   );
